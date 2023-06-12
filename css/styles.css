@@ -1,0 +1,202 @@
+
+:root{
+    --fondo:#f1c905;
+    --contenedor: #f8f8f8;
+    --sofi:#e8c8d7;
+    --magui:#fcf6bd;
+    --clau:#d0f4de;
+    --agus:#a9def9;
+    --extra:#e4c1f9;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.principal{
+    background: var(--fondo);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    
+ 
+    
+}
+
+ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    text-align: left;
+    
+}
+
+.meses{
+    margin-top: 50px;
+    
+}
+
+.meses a{
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.meses li:hover{
+    background: var(--extra);
+}
+
+.meses span{
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+.mes{
+    background: var(--sofi);
+    padding: 10px 25px;
+    border-radius: 10px;
+    animation: meses 2s ease-in;
+}
+
+.jun{
+    background: #f37fb5;
+    animation: meses 4s ease-in;
+}
+
+.container{
+    background: var(--contenedor);
+    min-height: 75vh;
+    width: 75%;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+    
+    
+}
+
+.container-table a{
+    text-decoration: none;
+    color: #333;
+}
+
+.container-table{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 20px 0 ;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.table{
+    box-shadow: 1px 1px 10px #333;
+}
+
+
+.clau{
+    background: var(--clau);
+}
+
+.sofi{
+    background: var(--sofi);
+}
+
+.magui{
+    background: var(--magui);
+}
+
+.agus{
+    background: var(--agus);
+}
+
+.semana{
+    background: var(--extra);
+}
+
+#logo-br{
+    width: 100px;
+    margin-top: 20px;
+    animation: logo 3s ease-in;
+    margin-bottom: 50px;
+}
+
+.container h1, .container h2{
+    font-weight: 900;
+}
+
+.container h2{
+    background: var(--fondo);
+    margin-top: 80px;
+    border-radius: 10px;
+    padding: 5px 30px;
+    margin-bottom: 20px;
+    animation: todocomunica 2s ease-in;
+}
+
+#Encabezado{
+    animation: saludo 2s ease-in;
+}
+
+i{
+    position: absolute;
+    top: 80px;
+    left: 100px;
+    font-size: 1.5rem;
+    color: var(--fondo);
+    animation: volver 5s ease-in;
+}
+
+
+
+@keyframes logo{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes saludo{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes todocomunica{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes meses{
+    0%{
+        opacity: 0;
+        transform: translateX(10px);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+
+    }
+}
