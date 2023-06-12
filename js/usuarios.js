@@ -7,6 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     else{
       let encabezado = document.getElementById("Encabezado");
-      encabezado.innerHTML = "<img src=' ../img/"+nombre+".png' alt='Imagen-usuario' style='width:70px; border-radius:50%''> Hola " + nombre + " 👋🏽";
+      encabezado.innerHTML = "<img src='../img/"+nombre+".png' alt='Imagen-usuario' style='width:70px; border-radius:50%''> Hola " + nombre + " 👋🏽";
     }
   });
