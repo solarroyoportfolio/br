@@ -200,3 +200,30 @@ i{
 
     }
 }
+
+@media screen and (max-width: 768px){
+
+    ul{
+        grid-template-columns: 1fr 1fr ;
+        gap: 10px;
+        text-align: center;
+        padding-left: 0px;
+    }
+
+    i{
+        top: 40px;
+        left: 20px;
+    }
+
+    .mes{
+        margin-left: 0;
+        padding: 5px 15px;
+        background: var(--fondo);
+    }
+
+    
+
+    .principal{
+        background-color: var(--contenedor);
+    }
+}

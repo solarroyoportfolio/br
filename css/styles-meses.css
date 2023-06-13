@@ -151,3 +151,28 @@ i{
         transform: translate(0);
     }
 }
+
+@media  screen and (max-width: 768px){
+
+    .container-table{
+        grid-template-columns: 1fr;
+    }
+
+    .principal{
+        background: var(--contenedor);
+    }
+
+    i{
+        left: 20px;
+        top: 20px;
+    }
+
+    .container h2{
+        margin-bottom: 100px;
+    }
+
+    #logo-br{
+        margin-top: 50px;
+    }
+    
+}
