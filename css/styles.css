@@ -207,7 +207,11 @@ i{
         grid-template-columns: 1fr 1fr ;
         gap: 10px;
         text-align: center;
-        padding-left: 0px;
+        padding-left: 0rem;
+    }
+
+    #lista{
+        padding-left:0rem;
     }
 
     i{
