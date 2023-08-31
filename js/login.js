@@ -28,6 +28,12 @@ function login(){
     if (user=="clau" && password=="br1234"){
         window.location ="br.html";
         localStorage.setItem("username", "clau");
+    }  else if (user=="fran" && password=="br1234"){
+        window.location ="br.html";
+        localStorage.setItem("username", "fran");
+    }  else if (user=="geor" && password=="br1234"){
+        window.location ="br.html";
+        localStorage.setItem("username", "geor");
     }  else
     {
         alert("Datos incorrectos");
