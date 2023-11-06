@@ -64,7 +64,12 @@ ul{
 
 #nov{
     background: #f37fb5;
-    animation: meses 4s ease-in;
+    animation: meses 3s ease-in;
+}
+
+#nov:hover{
+    transform: scale(1.15);
+
 }
 
 .container{
