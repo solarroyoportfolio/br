@@ -27,6 +27,12 @@
     
 }
 
+.container div #imagenp-noel{
+    position: absolute;
+    width: 100px;
+    right: 20px;
+}
+
 ul{
     list-style: none;
     display: grid;
@@ -82,7 +88,8 @@ ul{
     justify-content: center;
     align-items: center;
     flex-direction: column;  
-    
+        position: relative;
+
     
 }
 
