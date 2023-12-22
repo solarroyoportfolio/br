@@ -22,11 +22,15 @@
     justify-content: center;
     align-items: center;
     font-family: 'Poppins', sans-serif;
-    
  
     
 }
 
+#imagenp-noel{
+    position: absolute;
+    width: 400px;
+    left: -190px;
+}
 ul{
     list-style: none;
     display: grid;
@@ -54,7 +58,8 @@ i{
     justify-content: center;
     align-items: center;
     flex-direction: column;  
-    
+    position: relative;
+
     
 }
 
