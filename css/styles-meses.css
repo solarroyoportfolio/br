@@ -31,6 +31,15 @@
     width:350px;
     left: -170px;
 }
+
+#imagen-grinch{
+    position: absolute;
+    bottom: 0px;
+    width: 300px;
+    right: -50px;
+}
+
+
 ul{
     list-style: none;
     display: grid;
@@ -179,8 +188,10 @@ i{
     #logo-br{
         margin-top: 50px;
     }
-    .contenedor-pnoel{
+    .contenedor-pnoel,.contenedor-grinch{
         display: none;
     }
+
+    
     
 }
