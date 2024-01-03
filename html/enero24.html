@@ -51,7 +51,7 @@
                  <tr>
                      <th class=" table-primary sofi">BAHIA IMPORT</th>
                      <td class="table-primary">xx</td>
-                     <td class="table-primary"></td>
+                     <td class="table-primary" onclick="marcarCelda(this)"  data-contador="0"></td>
                      <td class="table-primary"></td>
                      <td class="table-primary"></td>
                      <td class="table-primary"></td>
@@ -61,7 +61,7 @@
                 
                  <tr>
                     <th class="table-primary clau">COLANERI</th>
-                    <td class="table-primary"></td>
+                    <td class="table-primary">x</td>
                     <td class="table-primary"></td>
                     <td class="table-primary"></td>
                     <td class="table-primary"></td> 
@@ -255,7 +255,38 @@
 
 
 
+<!-- <script>
+function marcarCelda(celda) {
+    let contador = parseInt(celda.getAttribute('data-contador')) || 0;
 
+    if (!celda.innerHTML.trim()) {
+        contador++;
+        celda.innerHTML = 'X'.repeat(contador);
+        celda.setAttribute('data-contador', contador);
+    } else {
+        contador++;
+        celda.innerHTML = 'X'.repeat(contador);
+        celda.setAttribute('data-contador', contador);
+    }
+
+    // Almacena el contador en localStorage
+    localStorage.setItem('contadorCelda', contador);
+}
+
+// Recuperar el contador al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    let contadorGuardado = localStorage.getItem('contadorCelda') || 0;
+    if (contadorGuardado > 0) {
+        document.querySelectorAll('[data-contador]').forEach(function(celda) {
+            celda.innerHTML = 'X'.repeat(parseInt(contadorGuardado));
+            celda.setAttribute('data-contador', contadorGuardado);
+        });
+    }
+});
+
+
+
+</script> -->
     <script src="../js/agregar.js"></script>
     <script src="../js/login.js"></script>
     <script src="../js/usuarios.js"></script>
