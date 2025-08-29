@@ -25,10 +25,10 @@ export default function Login({ onLogin }: LoginProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center p-4">
-      <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 w-full max-w-md border border-white/20 shadow-2xl">
-        <div className="text-center mb-8">
-          <div className="relative w-32 h-32 mx-auto mb-6">
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center p-6">
+      <div className="bg-white/30 backdrop-blur-lg rounded-2xl px-10 py-12 w-full max-w-md border border-white/30 shadow-2xl flex flex-col items-center">
+        <div className="text-center flex flex-col justify-center items-center mb-10">
+          <div className="relative w-24 h-24 mx-auto mb-4">
             <Image
               src="/images/logobr.png"
               alt="BACKROOM Logo"
@@ -36,16 +36,16 @@ export default function Login({ onLogin }: LoginProps) {
               className="object-contain"
             />
           </div>
-          <h1 className="text-3xl font-bold text-white mb-2">BACKROOM</h1>
-          <p className="text-white/80">#TODOCOMUNICA</p>
+         
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label htmlFor="username" className="block text-white/90 text-sm font-medium mb-2">
+        <form onSubmit={handleSubmit} className="space-y-8 w-full flex flex-col items-center justify-center">
+          <div className="w-full flex flex-col items-center justify-center">
+          
+            <div className="w-full flex flex-col items-center justify-center mb-6 gap-4 text-start">
+                <label htmlFor="username" className=" text-white/90 text-base font-medium mb-4 text-left">
               Usuario
             </label>
-            <div className="relative">
               <input
                 type="text"
                 id="username"
@@ -54,38 +54,28 @@ export default function Login({ onLogin }: LoginProps) {
                   setUsername(e.target.value);
                   setError('');
                 }}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                className="w-full max-w-xs px-5 py-3 bg-white/40 border border-white/50 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-lg"
                 placeholder="Ingresa tu usuario"
                 required
               />
-              <LogIn className="absolute right-3 top-3 h-5 w-5 text-white/50" />
+              <LogIn className="absolute right-6 top-3 h-6 w-6 text-white/50" />
             </div>
             {error && (
-              <p className="text-red-400 text-sm mt-2">{error}</p>
+              <p className="text-red-400 text-sm mt-2 text-center">{error}</p>
             )}
           </div>
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+            className="w-full max-w-xs bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow mb-10"
           >
             Ingresar
           </button>
         </form>
 
-        <div className="mt-8">
-          <p className="text-white/70 text-sm text-center mb-4">Acceso rápido:</p>
-          <div className="flex flex-wrap gap-2 justify-center">
-            {['sol', 'maia', 'clau', 'fran', 'geor'].map((user) => (
-              <button
-                key={user}
-                onClick={() => quickLogin(user)}
-                className="px-3 py-1 bg-white/10 text-white/80 rounded-full text-sm hover:bg-white/20 transition-colors duration-200"
-              >
-                {user}
-              </button>
-            ))}
-          </div>
+        <div className='flex flex-col justify-center items-center pt-10'>
+           <h1 className="text-4xl font-bold text-white mb-2 tracking-wide">BACKROOM</h1>
+          <p className="text-white/80 text-base">#TODOCOMUNICA</p>
         </div>
       </div>
     </div>

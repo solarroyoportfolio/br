@@ -46,6 +46,12 @@ export default function CalendarMonth() {
   const monthData = getMonthData(year, monthValue);
 
   if (!monthData) {
+    // Botón para restaurar datos de ejemplo
+    const restoreAugustData = () => {
+      const { initialAugust2025 } = require('@/data/users');
+      localStorage.setItem('backroom-calendar', JSON.stringify({ '2025-08': initialAugust2025 }));
+      window.location.reload();
+    };
     return (
       <div className="min-h-screen bg-gray-50" style={{ fontFamily: 'Poppins, sans-serif' }}>
         <header className="bg-gray-900 text-white p-4 shadow-lg">
@@ -65,13 +71,11 @@ export default function CalendarMonth() {
               </div>
               <h1 className="text-xl font-bold">BACKROOM</h1>
             </div>
-            
             <div className="text-right">
               <p className="text-sm text-gray-300">{currentUser.name}</p>
             </div>
           </div>
         </header>
-
         <main className="container mx-auto px-4 py-8">
           <div className="text-center">
             <Calendar className="h-16 w-16 text-gray-400 mx-auto mb-4" />
@@ -81,6 +85,12 @@ export default function CalendarMonth() {
             <p className="text-gray-600 mb-8">
               Este mes aún no tiene datos configurados.
             </p>
+            <button
+              onClick={restoreAugustData}
+              className="inline-flex items-center space-x-2 bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg transition-colors font-bold mb-4"
+            >
+              <span>Restaurar datos de ejemplo (Agosto 2025)</span>
+            </button>
             <Link
               href="/"
               className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors"

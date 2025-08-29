@@ -14,10 +14,26 @@ interface DashboardProps {
 export default function Dashboard({ user, onLogout }: DashboardProps) {
   const currentYear = 2025;
 
+  // ...existing code...
+  const monthRoutes: Record<string, string> = {
+    enero: '/calendar/2025/01',
+    febrero: '/calendar/2025/02',
+    marzo: '/calendar/2025/03',
+    abril: '/calendar/2025/04',
+    mayo: '/calendar/2025/05',
+    junio: '/calendar/2025/06',
+    julio: '/calendar/2025/07',
+    agosto: '/calendar/2025/08',
+    septiembre: '/calendar/2025/09',
+    octubre: '/calendar/2025/10',
+    noviembre: '/calendar/2025/11',
+    diciembre: '/calendar/2025/12',
+  };
+
   return (
-    <div className="min-h-screen" style={{ fontFamily: 'Poppins, sans-serif' }}>
+    <div className="min-h-screen flex flex-col items-center bg-gray-100" style={{ fontFamily: 'Poppins, sans-serif' }}>
       {/* Header */}
-      <header className="bg-gray-900 text-white p-4 shadow-lg">
+      <header className="bg-gray-900 text-white p-4 shadow-lg w-full">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <div className="relative w-12 h-12">
@@ -33,7 +49,6 @@ export default function Dashboard({ user, onLogout }: DashboardProps) {
               <p className="text-sm text-gray-300">#TODOCOMUNICA</p>
             </div>
           </div>
-          
           <div className="flex items-center space-x-4">
             <div className="text-right">
               <p className="text-sm text-gray-300">Bienvenido/a</p>
@@ -51,8 +66,8 @@ export default function Dashboard({ user, onLogout }: DashboardProps) {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
-        <div className="text-center mb-12">
+      <main className="flex flex-col items-center w-full px-4 py-8">
+        <div className="text-center mb-12 w-full">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
             Calendario {currentYear}
           </h2>
@@ -62,21 +77,21 @@ export default function Dashboard({ user, onLogout }: DashboardProps) {
         </div>
 
         {/* Months Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl w-full justify-center mx-auto">
           {months.map((month) => (
             <Link
               key={month.value}
-              href={`/calendar/${currentYear}/${month.value}`}
+              href={`/calendar/${currentYear}/${month.value.padStart(2, '0')}`}
               className="group"
             >
-              <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-gray-200 overflow-hidden">
-                <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-4">
-                  <Calendar className="h-8 w-8 text-white mx-auto mb-2" />
+              <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-gray-200 overflow-hidden flex flex-col items-center">
+                <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-4 w-full flex flex-col items-center">
+                  <Calendar className="h-8 w-8 text-white mb-2" />
                   <h3 className="text-white font-semibold text-center">
                     {month.name}
                   </h3>
                 </div>
-                <div className="p-6">
+                <div className="p-6 w-full flex flex-col items-center">
                   <p className="text-gray-600 text-center text-sm">
                     {month.name} {currentYear}
                   </p>
@@ -92,32 +107,29 @@ export default function Dashboard({ user, onLogout }: DashboardProps) {
         </div>
 
         {/* Info Section */}
-        <div className="mt-16 text-center">
-          <div className="bg-gray-50 rounded-xl p-8 max-w-2xl mx-auto">
+        <div className="mt-16 text-center w-full flex justify-center">
+          <div className="bg-gray-50 rounded-xl p-8 max-w-2xl w-full">
             <h3 className="text-2xl font-bold text-gray-800 mb-4">
               Sistema de Gestión de Tareas
             </h3>
             <p className="text-gray-600 mb-6">
               Organiza y rastrea todas las tareas del equipo BACKROOM de manera eficiente
             </p>
-            
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
               <div className="bg-blue-100 p-4 rounded-lg">
                 <div className="w-4 h-4 bg-blue-500 rounded mx-auto mb-2"></div>
-                <p className="font-semibold text-blue-800">Sofi & Clau</p>
-                <p className="text-blue-600">Tareas principales</p>
+                <p className="font-semibold text-blue-800">Maia</p>
+                <p className="text-blue-600">Encargada principal</p>
               </div>
-              
-              <div className="bg-yellow-100 p-4 rounded-lg">
-                <div className="w-4 h-4 bg-yellow-500 rounded mx-auto mb-2"></div>
-                <p className="font-semibold text-yellow-800">Magui</p>
-                <p className="text-yellow-600">Tareas secundarias</p>
+              <div className="bg-blue-100 p-4 rounded-lg">
+                <div className="w-4 h-4 bg-blue-500 rounded mx-auto mb-2"></div>
+                <p className="font-semibold text-blue-800">Sami</p>
+                <p className="text-blue-600">Encargada principal</p>
               </div>
-              
-              <div className="bg-purple-100 p-4 rounded-lg">
-                <div className="w-4 h-4 bg-purple-500 rounded mx-auto mb-2"></div>
-                <p className="font-semibold text-purple-800">Backroom</p>
-                <p className="text-purple-600">Tareas especiales</p>
+              <div className="bg-blue-100 p-4 rounded-lg">
+                <div className="w-4 h-4 bg-blue-500 rounded mx-auto mb-2"></div>
+                <p className="font-semibold text-blue-800">Sol</p>
+                <p className="text-blue-600">Encargada principal</p>
               </div>
             </div>
           </div>
